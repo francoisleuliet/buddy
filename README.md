@@ -31,5 +31,8 @@ Membres de l'équipe :
 
 Développeur Responsable :
 
+- Front : Julien    
+- Back : Audrey
+
 Estimation du Temps :
 ~ 8 jours

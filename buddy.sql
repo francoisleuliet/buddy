@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 19 Janvier 2016 à 16:29
+-- Généré le :  Mar 19 Janvier 2016 à 16:37
 -- Version du serveur :  5.6.25
 -- Version de PHP :  5.6.11
 
@@ -32,7 +32,10 @@ CREATE TABLE IF NOT EXISTS `annonce` (
   `sous-categorie` varchar(255) NOT NULL,
   `titre` varchar(255) NOT NULL,
   `description` text NOT NULL,
-  `lieu` text NOT NULL,
+  `region` varchar(255) NOT NULL,
+  `departement` varchar(255) NOT NULL,
+  `code_postal` varchar(255) NOT NULL,
+  `ville` varchar(255) NOT NULL,
   `idphoto` varchar(255) NOT NULL,
   `id_bud` int(11) NOT NULL,
   `date_pub` date NOT NULL

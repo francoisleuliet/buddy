@@ -73,11 +73,11 @@
 
                                             <div id="remember" class="checkbox">
 
-                                                <center><a href="<?php echo $this->url('liste') ; ?>" class="forgot-password">
+                                                <center><a href="<?php echo $this->url('login') ; ?>" class="forgot-password">
                                                     Mot de passe oublié ?
                                                     </a></center> 
 
-                                                <center><a href="#" class="forgot-password">
+                                                <center><a href="<?php echo $this->url('inscription') ; ?>" class="forgot-password">
                                                     S'inscrire ?
                                                     </a></center> 
 

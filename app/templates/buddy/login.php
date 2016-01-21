@@ -15,7 +15,7 @@
         <img id="profile-img" class="profile-img-card" src="<?php echo $this->assetUrl('img/mail.png')?>" />
         
         <p><img id="log_danger" src="<?php echo $this->assetUrl('img/danger.png')?>" />  Vous avez oublié votre mot de passe :<br/>
-            Veuillez rentré votre Email pour redefinir votre Mot de passe;   
+            Veuillez rentré votre Email pour redéfinir votre Mot de passe;   
                </p>
                 
         <p id="profile-name" class="profile-name-card" name="myform[username]"></p>

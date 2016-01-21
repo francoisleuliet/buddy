@@ -51,43 +51,43 @@
                             <li class="active"><a href="#">Accueil</a></li>
                             <li><a href="#contact">Contact</a></li>
                             <li><a href="#" data-toggle="dropdown" class=" dropdown dropdown-toggle">Connexion <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                               
-                                <!-- LOGIN CONNEXION -->                         
-                                <div class="card card-container">
+                                <ul class="dropdown-menu">
 
-                                    <img id="profile-img" class="profile-img-card" src="<?php echo $this->assetUrl('img/profil.jpg')?>" />
-                                    <p id="profile-name" class="profile-name-card" name="myform[username]"></p>
+                                    <!-- LOGIN CONNEXION -->                         
+                                    <div class="card card-container">
 
-                                    <form class="form-signin" method="POST">
-                                        <span id="reauth-email" class="reauth-email"></span>
+                                        <img id="profile-img" class="profile-img-card" src="<?php echo $this->assetUrl('img/profil.jpg')?>" />
+                                        <p id="profile-name" class="profile-name-card" name="myform[username]"></p>
 
-                                        <input type="email" id="inputEmail" class="form-control" placeholder="Adresse Email" name="myform[email]" required autofocus>
-                                        <input type="password" id="inputPassword" class="form-control" name="myform[password]" placeholder="Mot de passe" required>
+                                        <form class="form-signin" method="POST">
+                                            <span id="reauth-email" class="reauth-email"></span>
 
-                                        <div class="wrapper">
-                                            <span class="group-btn  col-lg-12">     
-                                                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" name="create">Connexion</button>
-                                            </span>
-                                        </div>
+                                            <input type="email" id="inputEmail" class="form-control" placeholder="Adresse Email" name="myform[email]" required autofocus>
+                                            <input type="password" id="inputPassword" class="form-control" name="myform[password]" placeholder="Mot de passe" required>
 
-                                        <div id="remember" class="checkbox">
+                                            <div class="wrapper">
+                                                <span class="group-btn  col-lg-12">     
+                                                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" name="create">Connexion</button>
+                                                </span>
+                                            </div>
 
-                                            <center><a href="#" class="forgot-password">
-                                                Mot de passe oublié ?
-                                                </a></center> 
+                                            <div id="remember" class="checkbox">
 
-                                            <center><a href="#" class="forgot-password">
-                                                S'inscrire ?
-                                                </a></center> 
+                                                <center><a href="<?php echo $this->url('liste') ; ?>" class="forgot-password">
+                                                    Mot de passe oublié ?
+                                                    </a></center> 
 
-                                        </div>
+                                                <center><a href="#" class="forgot-password">
+                                                    S'inscrire ?
+                                                    </a></center> 
 
-                                    </form><!-- /form -->
+                                            </div>
 
-                                </div><!-- /.END LOGIN CONNEXION -->
+                                        </form><!-- /form -->
 
-                            </ul></li>
+                                    </div><!-- /.END LOGIN CONNEXION -->
+
+                                </ul></li>
 
                         </ul>
                     </div><!--.nav-collapse -->

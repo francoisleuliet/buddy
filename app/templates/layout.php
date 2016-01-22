@@ -14,6 +14,7 @@
 
 		<section>
 			<?= $this->section('main_content') ?>
+			<?= $this->section('inscription') ?>
 		</section>
 
 		<footer>

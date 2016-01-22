@@ -29,9 +29,9 @@
 <![endif]-->
 
     </head>
+    
     <body>
-
-
+       
         <!-- HEADER -->
         <header>
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -57,13 +57,13 @@
                                     <div class="card card-container">
 
                                         <img id="profile-img" class="profile-img-card" src="<?php echo $this->assetUrl('img/profil.jpg')?>" />
-                                        <p id="profile-name" class="profile-name-card" name="myform[username]"></p>
+                                        <p id="profile-name" class="profile-name-card" name="login[username]"></p>
 
                                         <form class="form-signin" method="POST">
                                             <span id="reauth-email" class="reauth-email"></span>
 
-                                            <input type="email" id="inputEmail" class="form-control" placeholder="Adresse Email" name="myform[email]" required autofocus>
-                                            <input type="password" id="inputPassword" class="form-control" name="myform[password]" placeholder="Mot de passe" required>
+                                            <input type="email" id="inputEmail" class="form-control" placeholder="Adresse Email" name="login[email]" required autofocus>
+                                            <input type="password" id="inputPassword" class="form-control" name="login[password]" placeholder="Mot de passe" required>
 
                                             <div class="wrapper">
                                                 <span class="group-btn  col-lg-12">     

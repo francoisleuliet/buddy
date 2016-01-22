@@ -7,9 +7,6 @@ use \W\Controller\Controller;
 class DefaultController extends Controller
 {
 
-	/**
-	 * Page d'accueil par défaut
-	 */
 	public function home()
 	{
 		$this->show('default/home');
@@ -36,18 +33,23 @@ class DefaultController extends Controller
 			$uploads_dir = 'C:/xampp/htdocs/buddy/upload/profil';
 
             $tmp_name = $_FILES['inscription']['tmp_name']['photo_profil'];
-            $name = $_FILES['inscription']['name']['photo_profil'];
+            $name = time() ."_" . $_FILES['inscription']['name']['photo_profil'];
             $result = move_uploaded_file($tmp_name, "$uploads_dir/$name");
             
             debug($result);
             
-            $_POST['inscription']['photo_profil'] = basename($_FILES['inscription']['name']['photo_profil']);
+            $_POST['inscription']['photo_profil'] = $name;
             
             $manager->insert($_POST['inscription']);
 				$this->redirectToRoute('home');
 			}
 			
 			$this->show('buddy/inscription');
+	}
+
+	public function profil()
+	{
+		$this->show('buddy/profil');
 	}
 
 }

@@ -23,25 +23,27 @@ class DefaultController extends Controller
 			$manager = new \Manager\ProfilManager;
 			$manager->setTable('profil');
 			$email = trim($_POST["inscription"]["email"]);
-			$password = trim($_POST["inscription"]["mot_de_passe"]);
+			$password = trim($_POST["password"]);
 
 			if (filter_var($email, FILTER_VALIDATE_EMAIL) && !empty($password)) {
-				$_POST["inscription"]["mot_de_passe"] = password_hash($password, PASSWORD_DEFAULT);
+				$_POST["inscription"]["password"] = password_hash($password, PASSWORD_DEFAULT);
 			}
 
-			$repertoire_upload = "C:/xampp/htdocs/buddy/upload/";		
-			debug($_FILES);
-			$fichier_upload = $repertoire_upload . basename($_FILES['inscription']['name']['photo_profil']);
-			debug($fichier_upload);
-			debug(basename($_FILES['inscription']['tmp_name']['photo_profil']));
-			if (move_uploaded_file(basename($_FILES['inscription']['tmp_name']['photo_profil']), $fichier_upload)) {
-				echo "Le téléversement est OK";
-			} else {
-				echo "Erreur...";
+			if (filter_var($email, FILTER_VALIDATE_EMAIL) && !empty($confirmpassword)) {
+				$_POST["inscription"]["confirmpassword"] = password_hash($confirmpassword, PASSWORD_DEFAULT);
 			}
-				$_POST['inscription']['photo_profil'] = basename($_FILES['inscription']['name']['photo_profil']);
-				debug($_POST);
-				$manager->insert($_POST['inscription']);
+
+			$uploads_dir = 'C:/xampp/htdocs/buddy/upload/profil';
+
+            $tmp_name = $_FILES['inscription']['tmp_name']['photo_profil'];
+            $name = $_FILES['inscription']['name']['photo_profil'];
+            $result = move_uploaded_file($tmp_name, "$uploads_dir/$name");
+            
+            debug($result);
+            
+            $_POST['inscription']['photo_profil'] = basename($_FILES['inscription']['name']['photo_profil']);
+            
+            $manager->insert($_POST['inscription']);
 				$this->redirectToRoute('home');
 			}
 			

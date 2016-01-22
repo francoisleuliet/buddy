@@ -3,7 +3,31 @@
 
 <?php $this->start('main_content') ?>
 
-		<form class="form-horizontal" method="post" enctype="multipart/form-data">
+<script type="text/javascript" src="http://www.technicalkeeda.com/js/javascripts/plugin/jquery.js"></script>
+<script type="text/javascript" src="http://www.technicalkeeda.com/js/javascripts/plugin/jquery.validate.js"></script>
+
+<script>
+
+function validatePassword(){ 
+ var validator = $("#loginForm").validate({
+  rules: {                   
+   password :"required",
+   confirmpassword :{
+    equalTo: "#password"
+      }  
+     },                             
+     messages: {
+      password :" Enter Password",
+      confirmpassword :" Le Mot de Passe est différent !"
+     }
+ });
+ if(validator.form()){
+ }
+}
+
+ </script>
+
+		<form class="form-horizontal" method="post" enctype="multipart/form-data" id="loginForm" name="loginForm">
 			<div class="form-group">
 				<label for="nom" class="col-sm-2 control-label">Nom</label>
 				<div class="col-sm-5">
@@ -32,13 +56,13 @@
 			<div class="form-group">
 				<label for="mot_de_passe" class="col-sm-2 control-label">Mot de Passe</label>
 				<div class="col-sm-5">
-					<input type="password" class="form-control" id="mot_de_passe" name="inscription[mot_de_passe]" placeholder="Mot de Passe" required>
+					<input type="password" class="form-control" id="password" name="password" placeholder="Choisis ton mot de passe" required>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="mot_de_passe" class="col-sm-2 control-label">Confirmer Mot de Passe</label>
 				<div class="col-sm-5">
-					<input type="password" class="form-control" id="mot_de_passe" name="inscription[mot_de_passe]" placeholder="Mot de Passe" required>
+					<input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirmes ton mot de passe" required>
 				</div>
 			</div>
 			<div class="form-group">
@@ -78,7 +102,7 @@
         	</div>		
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-					<button name="submit" type="submit" class="btn btn-default">Valider mon inscription</button>
+					<button name="submit" type="submit" onClick="validatePassword();" class="btn btn-default">Valider mon inscription</button>
 				</div>
 			</div>
 		</form>

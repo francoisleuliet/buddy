@@ -96,7 +96,7 @@
         </div>
         <div class="footer">
                 <div class="col-md-12">
-                    <a href="#">Comment ça marche ?</a> | <a href="#">Mentions légales</a> | <a href="#">CGU</a> | <a href="#">Contact</a> 
+                    <a href="#">Comment ça mche ?</a> | <a href="#">Mentions légales</a> | <a href="#">CGU</a> | <a href="#">Contact</a> 
                 </div>
             </div>
     </body>

@@ -2,37 +2,36 @@
 
 <?php $this->start('main_content') ?>
 <div class="bg row">
-                <h1>Vous avez une passion,
-                    <br/><small>partagez-la</small></h1>
-            </div>
+    <h1>Vous avez une passion,
+    <br/><small>partagez-la</small></h1>
+</div>
         <div class="bg_search container-fluid">
-                <div class="search col-md-10 col-md-offset-1">
+                <div class="search col-sm-10 col-md-offset-1">
                     <form class="inline">
-                        <div class="form group">
+                        <div class="form-group">
                            <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-sm-4">
                                     <select class="form-control">
                                         <option></option>
                                         <option>1</option>
                                         <option>2</option>
                                     </select>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-sm-4">
                                     <select class="form-control">
                                         <option></option>
                                         <option>1</option>
                                         <option>2</option>
                                     </select>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-sm-3">
                                     <input type="text" class="form-control" id="exampleInputName2" placeholder="Mots clés">
                                 </div>
                             </div>
                         </div>
-                        <br/>
-                        <div class="form group">
+                        <div class="form-group">
                            <div class="row">
-                                <div class="col-md-9">
+                                <div class="col-sm-9">
                                     <select class="form-control">
                                         <option></option>
                                         <option>1</option>
@@ -46,14 +45,14 @@
                 </div>
         </div>
         <div class="container">
-            <div class="annonces col-md-12">
-                <div class="col-md-4">
+            <div class="annonces col-sm-12">
+                <div class="col-sm-4">
                     <img src="<?= $this->assetUrl('img/sugg1.jpg') ?>" class="img-responsive" alt="Responsive image">
                 </div>
-                <div class="col-md-4">
+                <div class="col-sm-4">
                     <img src="<?= $this->assetUrl('img/sugg2.jpg') ?>" class="img-responsive" alt="Responsive image">
                 </div>
-                <div class="col-md-4">
+                <div class="col-sm-4">
                     <img src="<?= $this->assetUrl('img/sugg3.jpg') ?>" class="img-responsive" alt="Responsive image">
                 </div>
             </div>

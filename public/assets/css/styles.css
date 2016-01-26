@@ -4,6 +4,7 @@
 body {
     font-family: 'Lato', sans-serif;
     font-size: 16px;
+    background-color: #F8F8F8;
 }
 
 .header {
@@ -71,12 +72,15 @@ body {
     text-align: center;
     margin:0;
     padding:0;
-    height: 715px;
-    background: url(../../assets/img/bg1.jpg) no-repeat center;
+    height: 80vh;
+    background: url(../../assets/img/bg1.jpg) no-repeat center fixed;
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
 }
 
 .bg h1 {
-    margin: 20% 25% 0 25%;
+    margin: 0 25%;
+    margin-top: 30vh;
     color: #fff;
     font-size: 3.5em;
     font-weight: 700;
@@ -89,7 +93,7 @@ body {
 
 .bg_search {
     background-color: #F0F0F0;
-    height: 190px;
+    padding: 0px 0 0 50px;
 }
 
 
@@ -109,8 +113,6 @@ body {
 
 .annonces {
     margin-top: 50px;
-    margin-bottom: 50px;
-    height: 200px;
 }
 
 .footer {
@@ -128,3 +130,63 @@ body {
 }
 
 
+
+
+
+/* PAGE INSCRIPTION */
+
+.intro {
+    margin-top: 70px;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'lato';
+    font-weight: 600;
+    color: #357275;
+    font-size: 2.2em;
+}
+
+.signIn {
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+.signIn input {
+    height: 44px;
+}
+
+.uploadPP {
+    background: url(../img/icon_apn.svg);
+    width: 75px;
+    height: 75px;
+    margin: 0 0 0 20px;
+    padding: 0;
+    z-index: 1;
+    text-align: center;
+}
+
+ 
+.uploadPP input {
+    width: 75px;
+    height: 75px;
+    opacity: 0;
+    z-index: 2;
+}
+
+.uploadText {
+    color: #AFAFAF;
+}
+
+.bold {
+    font-size: 1em;
+    font-weight: 700;
+    color: #5A5A5A;
+}
+
+hr {
+    background-color: #979797;
+    width: 100%;
+    height: 2px;
+    display: block;
+}

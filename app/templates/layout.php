@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
     <head>
 
         <meta charset="UTF-8">
@@ -104,6 +105,7 @@
         <main>
         <section>     
             <?= $this->section('main_content') ?>
+            <?= $this->section('inscription') ?>
         </section>
 
         <a href="<?= $this->url('buddy/create') ?>">Ecrire un post</a> | 

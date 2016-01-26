@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 22 Janvier 2016 à 12:48
+-- Généré le :  Mar 19 Janvier 2016 à 16:37
 -- Version du serveur :  5.6.25
 -- Version de PHP :  5.6.11
 
@@ -37196,24 +37196,14 @@ CREATE TABLE IF NOT EXISTS `profil` (
   `prenom` varchar(255) NOT NULL,
   `date_de_naissance` date NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `mot_de_passe` varchar(255) NOT NULL,
   `adresse` varchar(255) NOT NULL,
   `code_postal` int(11) NOT NULL,
   `ville` varchar(255) NOT NULL,
   `telephone` varchar(20) NOT NULL,
-  `mini_bio` text NOT NULL,
-  `photo_profil` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=latin1;
-
---
--- Contenu de la table `profil`
---
-
-INSERT INTO `profil` (`id`, `nom`, `prenom`, `date_de_naissance`, `email`, `password`, `adresse`, `code_postal`, `ville`, `telephone`, `mini_bio`, `photo_profil`) VALUES
-(60, 'Leuliet', 'Francois', '1982-08-22', 'francoisleuliet@gmail.com', '$2y$10$R5sKO7X8vz2adobF7OrgruePI3xKdrA9u0eb51XhsmtZG1.5J6HeS', 'Rue...', 27150, 'Hacqueville', '0649427166', 'ddd', 'banner-902591_1920.jpg'),
-(61, 'Dubost', 'Gérard', '2016-01-13', 'gerard.dubost@gmail.com', '$2y$10$4529J1iLYHSLyXfG/peUiuNDigrf.7gz34HZA6m8HHbuxLvuUttb.', '58 Avenue Jules Ferry', 33100, 'Bordeaux', 'dsds', 'dsds', ''),
-(62, 'Martin', 'Charlène', '2016-01-01', '123@gmail.com', '$2y$10$u78nb5hpUVHEo8DCxcOLvurBINqOYfCiPWhB/pKUbV8afQI3A0puS', '224 Rue Jean Jaurès', 57050, 'Metz', 'fdfd', 'fdfdf', ''),
-(63, 'Leuliet', 'Francois', '2016-01-31', 'francoisleuliet@gmail.com', '', 'Rue...', 27150, 'Hacqueville', '0649427166', 'fdgfdgd', '');
+  `mini-bio` text NOT NULL,
+  `idphoto_profil` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -37400,7 +37390,7 @@ ALTER TABLE `photo`
 -- AUTO_INCREMENT pour la table `profil`
 --
 ALTER TABLE `profil`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=64;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `questions_public`
 --

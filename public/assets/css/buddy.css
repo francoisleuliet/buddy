@@ -1,0 +1,53 @@
+body{
+    padding-top:300px;
+    /*background: url(../img/advent.jpg)center no-repeat scroll;*/
+}
+
+aside.bckAside{
+    height: 2000px;
+    width: 100%;
+    height: 100%;
+    background: url(../img/b2.jpg)center no-repeat fixed;
+}
+
+.bckAside1{
+   
+}
+
+.starter-template{
+    padding:40px 15px;
+    text-align:center;
+}
+
+.navbar-nav{
+    float: right;
+}
+
+main{
+    margin-top: 200px;
+    border-color: rgb(104, 145, 162);
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    text-align: center;
+}
+
+p>span{
+    color: red;
+    font-style: italic;
+}
+
+section{
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+}
+
+input[type="button"].btn-primary{
+    display: block;
+    border-radius: 100px;
+    margin: 30px auto;
+    width: 10%
+}

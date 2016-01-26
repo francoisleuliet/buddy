@@ -5,16 +5,18 @@
 
 <?php
 
-try {
-$bdd = new PDO('mysql:host=localhost;dbname=buddy;charset=utf8', 'root', ''); 
-}
-catch (Exception $e)
-{
-        die('Erreur : ' . $e->getMessage());
-}
+
+function afficherProfil($pdo) {
+		$sql = 'SELECT * FROM `profil`';
+		$stmt = $pdo->query($sql);
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+$profils = afficherProfil($pdo);
 ?>
 
 <br>
+<?php foreach($profils as $profil) : ?>
+<?php echo $profil['nom'],$profil['prenom'],$profil['email'] ?>
 <div>Nom : </div>
 <div>Prénom : </div>
 <div>Date de naissance : </div>

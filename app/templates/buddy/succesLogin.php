@@ -1,11 +1,6 @@
 
 <?php $this->layout('layout', ['title' => 'Connexion reussite']) ?>
 
-<?php $this->start('aside_content') ?>
-
-<img src="<?php echo $this->assetUrl('img/b3.jpg')?>" alt="back ground Login oublié"> class="bckAside"
-
-<?php $this->stop('aside_content') ?>
 
 <?php $this->start('main_content') ?>
 

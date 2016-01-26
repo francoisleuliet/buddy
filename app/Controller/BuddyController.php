@@ -80,8 +80,8 @@ class BuddyController extends Controller
             if(!$user) {
                 $this->show('Buddy/erreur');
             } else {
-                si oui, générer un token
-                et envoyer un mail
+                // si oui, générer un token
+                // et envoyer un mail
                 $user['email'];
             }
         }

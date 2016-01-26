@@ -13,7 +13,8 @@ class AnnonceController extends Controller
     {
         $builder = new Form\FormBuilder;
         $erreur='';
-
+        $_POST['annonce']['titre']='';
+        $_POST['annonce']['description']='';
                 
         if(!empty($_POST)) 
         {

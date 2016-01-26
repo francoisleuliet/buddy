@@ -6,7 +6,7 @@
 
 <div class="form-group">    
     <?= $builder->label('Titre'); ?>
-    <?= $builder->text('titre')->addClass('form-control')->placeholder('Je cherche un partenaire de poker, par exemple...')->required()->attribute('name', "annonce[titre]"); ?>
+    <?= $builder->text('titre')->addClass('form-control')->placeholder('Je cherche un partenaire de poker, par exemple...')->required()->attribute('name', "annonce[titre]")->value(($_POST['annonce']['titre'])); ?>
 </div>
 <div class="form-group">    
     <?= $builder->label('Catégorie'); ?>
@@ -37,7 +37,7 @@
 </div>
 <div class="form-group">   
     <?= $builder->label('Description'); ?>
-    <?= $builder->textarea('description')->rows(5)->addClass('form-control')->placeholder('Je décris ce que je cherche...')->attribute('name', "annonce[description]"); ?>
+    <?= $builder->textarea('description')->rows(5)->addClass('form-control')->placeholder('Je décris ce que je cherche...')->attribute('name', "annonce[description]")->value(($_POST['annonce']['description'])); ?>
 </div>
 
 <div class="form-group">   

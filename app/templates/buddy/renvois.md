@@ -1,4 +1,4 @@
- <div class="container">
+ï»¿ <div class="container">
         <div class="row">
             <div class="col-lg-12">
 
@@ -9,8 +9,8 @@
 
                     <img id="profile-img" class="profile-img-card" src="<?php echo $this->assetUrl('img/mail.png')?>" />
 
-                    <p><img id="log_danger" src="<?php echo $this->assetUrl('img/danger.png')?>" />  Vous avez oublié votre mot de passe :<br/>
-                        Veuillez rentré votre Email pour redéfinir votre Mot de passe;   
+                    <p><img id="log_danger" src="<?php echo $this->assetUrl('img/danger.png')?>" />  Vous avez oubliÃ© votre mot de passe :<br/>
+                        Veuillez rentrÃ© votre Email pour redÃ©finir votre Mot de passe;   
                     </p>
 
                     <p id="profile-name" class="profile-name-card" name="myform[username]"></p>

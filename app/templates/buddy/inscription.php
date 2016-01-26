@@ -1,6 +1,9 @@
 <?php $this->layout('layout', ['title' => 'Inscription']) ?>
 
+
 <?php $this->start('main_content') ?>
+        
+        <div class="container">
 
 		<form class="form-horizontal" method="post" enctype="multipart/form-data">
 		
@@ -95,5 +98,7 @@
 				</div>
 			</div>
 		</form>
+		
+		</div>
 		
 <?php $this->stop('main_content') ?>

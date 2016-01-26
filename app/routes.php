@@ -5,7 +5,10 @@
 		['GET|POST', '/', 'Buddy#login', 'login'], // connexion
 		['GET', '/logout', 'Budddy#logout', 'logout'],  // deconnexion
         ['GET', '/erreur', 'Buddy#erreur', 'erreur'],   // ERREUR
+        ['GET', '/succesLogin', 'Buddy#succesLogin', 'succesLogin'],   // session user comfirmer;
+        ['GET', '/succesForm', 'Buddy#succesForm', 'succesForm'],   // Formulaire valider;
         ['GET|POST', '/inscription', 'Buddy#inscription', 'inscription'],   //register
-      //  ['GET|POST', '/recherche', 'Buddy#recherche', 'recherche'],   //recherche
+        ['GET|POST', '/recoverLogin', 'Buddy#recoverLogin', 'recoverLogin'],   // mot de passe oublié;
+        //['GET|POST', '/recherche', 'Buddy#recherche', 'recherche'],   //recherche
 
 	);

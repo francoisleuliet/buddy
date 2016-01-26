@@ -48,8 +48,9 @@
 
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Accueil</a></li>
+                            <li class="active"><a href="<?php echo $this->url('index') ; ?>">Accueil</a></li>
                             <li><a href="#contact">Contact</a></li>
+                            <li><a href="<?php echo $this->url('inscription') ; ?>">Inscription</a></li>
                             <li><a href="#" data-toggle="dropdown" class=" dropdown dropdown-toggle">Connexion <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
 
@@ -59,7 +60,7 @@
                                         <img id="profile-img" class="profile-img-card" src="<?php echo $this->assetUrl('img/profil.jpg')?>" />
                                         <p id="profile-name" class="profile-name-card" name="login[username]"></p>
 
-                                        <form class="form-signin" method="POST">
+                                        <form action="<?= $this->url('login') ?>" class="form-signin" method="POST">
                                             <span id="reauth-email" class="reauth-email"></span>
 
                                             <input type="email" id="inputEmail" class="form-control" placeholder="Adresse Email" name="login[email]" required autofocus>
@@ -73,7 +74,7 @@
 
                                             <div id="remember" class="checkbox">
 
-                                                <center><a href="<?php echo $this->url('login') ; ?>" class="forgot-password">
+                                                <center><a href="<?php echo $this->url('recoverLogin') ; ?>" class="forgot-password">
                                                     Mot de passe oublié ?
                                                     </a></center> 
 
@@ -94,13 +95,13 @@
                 </div>
             </nav>
         </header><!-- /.END HEADER -->
+        
+                <aside class="bckAside"><?= $this->section('aside_content') ?></aside>
+
 
         <div class="container">
-            <header>
-                <h1></h1>
-            </header>                  
-        </div>
-
+                
+        <main>
         <section>     
             <?= $this->section('main_content') ?>
         </section>
@@ -109,7 +110,8 @@
         <a href="<?= $this->url('register') ?>">Register</a> | 
         <a href="<?= $this->url('login') ?>">Login</a> | 
         <a href="<?= $this->url('logout') ?>">Logout</a>
-
+        
+        </main>
 
         <footer>
 

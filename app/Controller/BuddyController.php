@@ -35,43 +35,6 @@ class BuddyController extends Controller
         $this->show('Buddy/create');
     }
 
-    public function emailExists($email){ 
-
-        $app = getApp();
-
-        $sql = "SELECT ".$app->getConfig('security_email_property')." FROM " . $app->getConfig('security_user_table') .
-            " WHERE " . $app->getConfig('security_email_property') . " = :email LIMIT 1";
-        $dbh = ConnectionManager::getDbh();
-        $sth = $dbh->prepare($sql);
-        $sth->bindValue(":email", $email);
-        if ($sth->execute()){
-            $foundUser = $sth->fetch();
-            if ($foundUser){
-                return true;
-            }
-        }
-
-        return false;}
-
-    public function usernameExists($username){
-
-        $app = getApp();
-
-        $sql = "SELECT ".$app->getConfig('security_username_property')." FROM " . $app->getConfig('security_user_table') .
-            " WHERE " . $app->getConfig('security_username_property') . " = :username LIMIT 1";
-        $dbh = ConnectionManager::getDbh();
-        $sth = $dbh->prepare($sql);
-        $sth->bindValue(":username", $username);
-        if ($sth->execute()){
-            $foundUser = $sth->fetch();
-            if ($foundUser){
-                return true;
-            }
-        }
-
-        return false;
-    }	
-
     public function login(){
 
         if(isset($_POST['create'])) {
@@ -108,62 +71,18 @@ class BuddyController extends Controller
 
     public function recoverLogin(){
 
-        if (isset($_POST['email'])){
-
+        if (isset($_POST['email'])) {
             $email = $_POST['email'];
-            $sql = "SELECT * FROM wusers WHERE email='$email'";
-            $result = PDO::query($query)or die(PDO::errorInfo());
-            $count = PDO::MYSQL_ATTR_FOUND_ROWS($result);
-            if($count === false ) {
-                echo 'Erreur SQL : ' . PDO::errorInfo();
-            }
-
-
-
-            if($count==1)
-            {
-                $rows=mysql_fetch_array($result);
-                $pass  =  $rows['password'];//FETCHING PASS
-                echo "your pass is ::".($pass)."";
-
-                $to = $rows['email'];
-                echo "your email is ::".$email;
-
-                //Details for sending E-mail
-                $from = "Coding Cyber";
-                $url = "http://buddy2/";
-                $body  =  "Coding Cyber password recovery Script
-
-		        -----------------------------------------------
-		        Url : $url;
-		        email Details is : $to;
-		        Here is your password  : $pass;
-		        Sincerely,
-		        Coding Cyber";
-   
-                $from = "le mail";
-                $subject = "CodingCyber Password recovered";
-                $headers1 = "From: $from\n";
-                $headers1 .= "Content-type: text/html;charset=iso-8859-1\r\n";
-                $headers1 .= "X-Priority: 1\r\n";
-                $headers1 .= "X-MSMail-Priority: High\r\n";
-                $headers1 .= "X-Mailer: Just My Server\r\n";
-                $sentmail = mail ( $to, $subject, $body, $headers1 );
+            
+            // vérifier que l'email existe
+            $user_manager = new UserManager();
+            $user = $user_manager->getUserByUsernameOrEmail($email);
+            if(!$user) {
+                $this->show('Buddy/erreur');
             } else {
-                if ($_POST ['email'] != "") {
-                    echo "<span style='color: #ff0000;'> 'Votre E-mail n'a pas était trouvé</span>";
-                }
-            };
-
-            //If the message is sent successfully, display sucess message otherwise display an error message.
-            if($sentmail==1)
-            {
-                echo "<span style='color: #ff0000;'> Your Password Has Been Sent To Your Email Address.</span>";
-            }
-            else
-            {
-                if($_POST['email']!="")
-                    echo "<span style='color: #ff0000;'> Impossible d'envoyer l''E-mail de récuperation.Un probleme est survenu pendant l'envois...</span>";
+                // si oui, générer un token
+                // et envoyer un mail
+                // $user['email'];
             }
         }
         $this->show('Buddy/recoverLogin');

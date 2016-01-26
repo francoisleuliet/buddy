@@ -50,12 +50,17 @@
 <?= $builder->text('administrative_area_level_1')->id('administrative_area_level_1')->addClass('form-control hidden')->attribute('name', "annonce[region]"); ?>
 <?= $builder->text('administrative_area_level_2')->id('administrative_area_level_2')->addClass('form-control hidden')->attribute('name', "annonce[departement]"); ?>
 <?= $builder->text('postal_code')->id('postal_code')->addClass('form-control hidden')->attribute('name', "annonce[code_postal]"); ?>
-
 <?= $builder->submit('Enregistre ton annonce')->attribute('name', "submit"); ?>
+ <br/>
+<?php 
+
+if(isset($erreur)) {
+    echo $erreur;
+}
+
+?>
 
 <?= $builder->close(); ?>
-
-
 
 <?php $this->stop('main_content') ?>
 

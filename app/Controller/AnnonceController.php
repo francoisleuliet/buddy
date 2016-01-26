@@ -12,38 +12,32 @@ class AnnonceController extends Controller
     public function annonce()
     {
         $builder = new Form\FormBuilder;
+        $erreur='';
 
-        $obligatoire=array('annonce[titre]','annonce[categorie]','annonce[description]');
+                
         if(!empty($_POST)) 
         {
-            $retour=1;
-            foreach ($obligatoire as $val)
+                
+            if(strlen($_POST['annonce']['titre'])< 3)
+                {$corrige[] = 'Le titre doit comporter au moins 3 caractères';
+                }
+
+                if(empty($_POST['annonce']['categorie']))
+                {$corrige[] = 'Tu dois choisir une catégorie';
+                }
+                if(strlen($_POST['annonce']['description'])< 10)
+                {$corrige[] = 'La description doit comporter au moins 10 caractères';
+                }
+            
+  
+            
+            if(!empty($corrige)) 
             {
-               if(strlen($_POST['annonce[titre]'] < 3))
-               {$corrige[] = 'Le titre doit comporter au moins 3 caractères';
-               $retour=0;
-               } 
-            }
-            
-            
-            
-        }
-        
-        if(isset($_POST['submit'])) {
-
-
-            $errors[]='';
-
-
-
-            if(strlen($_POST['titre'] < 3)){$errors[] = 'Le titre doit comporter au moins 3 caractères';}
-            if(empty($_POST['annonce[categorie]'])){$errors[] = 'Tu dois choisir une catégorie';}
-            if(strlen($_POST['annonce[description]'] < 10)){$errors[] = 'La description doit comporter au moins 10 caractères';}
-
-            print_r($errors);
-
-
-            if(empty($errors)){ 
+              foreach ($corrige as $val) {
+                  $erreur .= $val . "<br/>";
+              }; 
+                
+            } else {
                 $manager = new \Manager\AnnonceManager;
                 $manager->setTable('annonce');
                 debug($_FILES);
@@ -63,13 +57,13 @@ class AnnonceController extends Controller
                 die($test);
 
                 //$this->redirectToRoute('home');
-            }
-            //            else print_r($errors);
+            
+        }
         }
 
         $helper = new Helper;
         $resultats = $helper->getLibelles();
-        $this->show('annonce/annonce',["builder" =>$builder, "libelles" =>$resultats[0], "sslibelles" =>$resultats[1]]);
+        $this->show('annonce/annonce',["builder" =>$builder, "libelles" =>$resultats[0], "sslibelles" =>$resultats[1], "erreur"=>$erreur]);
 
 
     }

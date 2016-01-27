@@ -9,9 +9,6 @@ use Helper\Helper;
 class DefaultController extends Controller
 {
 
-	/**
-	 * Page d'accueil par défaut
-	 */
 	public function home()
 	{
 		$builder = new Form\FormBuilder;

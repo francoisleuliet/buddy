@@ -13,8 +13,7 @@ class AnnonceController extends Controller
     {
         $builder = new Form\FormBuilder;
         $erreur='';
-
-                
+        
         if(!empty($_POST)) 
         {
                 
@@ -29,8 +28,7 @@ class AnnonceController extends Controller
                 {$corrige[] = 'La description doit comporter au moins 10 caractères';
                 }
             
-  
-            
+           
             if(!empty($corrige)) 
             {
               foreach ($corrige as $val) {
@@ -64,7 +62,6 @@ class AnnonceController extends Controller
         $helper = new Helper;
         $resultats = $helper->getLibelles();
         $this->show('annonce/annonce',["builder" =>$builder, "libelles" =>$resultats[0], "sslibelles" =>$resultats[1], "erreur"=>$erreur]);
-
 
     }
 }

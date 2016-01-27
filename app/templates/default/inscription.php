@@ -100,27 +100,44 @@ sinon ta photo ne sera pas validée !
 		        		</div>
 		        	</div>
 		        	<hr/>
-<!--
-		        	<div class="form-group">
-		        			<div class="uploadPP col-sm-3">
-                                <input type="file" name="inscription[photo_profil]"/>
-                           </div> 
-                           <p class="uploadText col-sm-9">
-                               <span class="bold">Uploade ta plus belle photo de profil</span><br/>
-                               Pense à montrer ton visage sans le cacher
-sinon ta photo ne sera pas validée !
-                           </p>
-                	</div>	
--->
+		        	<div class="downHobby row">
+		        	    <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-1">
+                                <select class="form-control">
+                                    <option disabled selected>Catégories</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                </select>
+                            </div>
+                        </div>
+                              
+                        <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-1">
+                                <select class="form-control">
+                                    <option disabled selected>Sous-Catégories</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                </select>
+                            </div>
+                        </div>        
+		              </div>
+		              
+		        		<p class="bold">Évalue ton niveau dans ce hobby<br/>en étant le plus juste possible</p>
+		        		
+                        <div class="rating"> </div>
+                        
+		        		<input class="ctaBlue" type="submit" value="Ajoute un hobbie">
+		        		
+		        	</div>
 
                 			
                 						
                 									
-                												
+                								
                 																		
 		        	<div class="form-group">
-		        		<div class="col-sm-offset-1 col-sm-10">
-		        			<button name="submit" type="submit" onClick="validatePassword();" class="btn btn-default">Valider mon inscription</button>
+		        		<div class="col-sm-8">
+		        			<button name="submit" type="submit" onClick="validatePassword();" class="cta_inscription btn btn-success">Inscris-toi</button>
 		        		</div>
 		        	</div>
 		        </form>

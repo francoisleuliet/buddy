@@ -22,7 +22,7 @@
                     <div class="right">
                         <nav>
                             <ul>
-                                <li><a href="#">Comment ça marche ?</a></li>
+                                <li><a href="<?= $this->url('commentmarche') ?>">Comment ça marche ?</a></li>
                                 <li><a href="<?= $this->url('inscription') ?>">Inscription</a></li>
                                 <li><a href="#">Connexion</a></li>
                             </ul>
@@ -31,6 +31,7 @@
                     </div>
                 </div>
             </div>
+            
     </div>
          <?= $this->section('main_content'); ?>   
         <div class="footer">

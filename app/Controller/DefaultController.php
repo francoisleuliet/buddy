@@ -19,4 +19,9 @@ class DefaultController extends Controller
 	{
 		$this->show('default/inscription');
 	}
+    
+    public function commentmarche()
+	{
+		$this->show('default/commentmarche');
+	}
 }

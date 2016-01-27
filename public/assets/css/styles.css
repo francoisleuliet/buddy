@@ -182,6 +182,7 @@ h2 {
     font-size: 1em;
     font-weight: 700;
     color: #5A5A5A;
+    text-align: center;
 }
 
 hr {
@@ -189,4 +190,55 @@ hr {
     width: 100%;
     height: 2px;
     display: block;
+}
+
+.downHobby {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.bold:last-child {
+    margin-top: 20px;
+}
+
+.ctaBlue {
+    color: #fff;
+    border-radius: 8px;
+    padding: 5px 20px;
+    border: none;
+    margin: 0 auto;
+    background-color: #179ED6;
+}
+
+.rating {
+    background: url(../img/rating.svg) no-repeat center;
+    height: 50px;
+}
+
+.cta_inscription {
+    padding: 10px 20px;
+    background-color: #4FB589;
+    border-radius: 8px;
+    color: #fff;
+    margin:  0 auto;
+    display: inline-block;
+}
+
+/* LOGIN CONNEXION */
+
+
+.dropdown-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    width: 350px;
+    margin: auto -150px;
+    font-size: 14px;
+    text-align: center;
+    list-style: none;
+    background-color: #fff;
+    border: none;
+    box-shadow: none;
 }

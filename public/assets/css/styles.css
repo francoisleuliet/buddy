@@ -190,3 +190,8 @@ hr {
     height: 2px;
     display: block;
 }
+
+.marge {
+    margin: 0 auto;
+    background-color: red;
+}

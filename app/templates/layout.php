@@ -26,23 +26,6 @@
                                 <li><a href="<?= $this->url('commentmarche') ?>">Comment ça marche ?</a></li>
                                 <li><a href="<?= $this->url('inscription') ?>">Inscription</a></li>
                                 <li><a href="#">Connexion</a></li>
-                                <li><a href="#">Connexion</a>
-
-                                    <!-- LOGIN CONNEXION -->                         
-
-                                        <form action="<?= $this->url('login') ?>" method="POST">
-
-                                            <input type="email" id="inputEmail" placeholder="Adresse Email" name="login[email]" required autofocus>
-                                            <input type="password" id="inputPassword" class="form-control" name="login[password]" placeholder="Mot de passe" required>
-
-                                    
-
-
-                                        </form><!-- /form -->
-
-                                    </div><!-- /.END LOGIN CONNEXION -->
-
-                                </li>
                             </ul>
                         </nav>
                         <a class="cta_buddy btn btn-success" href="#" role="button">Poster une annonce</a>

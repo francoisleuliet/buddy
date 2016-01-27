@@ -24,4 +24,9 @@ class DefaultController extends Controller
 	{
 		$this->show('default/commentmarche');
 	}
+    
+    public function annonce()
+	{
+		$this->show('default/annonce');
+	}
 }

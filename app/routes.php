@@ -4,5 +4,5 @@
 		['GET', '/', 'Default#home', 'home'],
 		['GET', '/inscription', 'Default#inscription', 'inscription'],
 		['GET', '/commentmarche', 'Default#commentmarche', 'commentmarche'],
-        
+		['GET', '/annonce', 'Default#annonce', 'annonce'],
 	);

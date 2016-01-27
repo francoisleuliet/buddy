@@ -182,6 +182,7 @@ h2 {
     font-size: 1em;
     font-weight: 700;
     color: #5A5A5A;
+    text-align: center;
 }
 
 hr {
@@ -191,7 +192,102 @@ hr {
     display: block;
 }
 
+<<<<<<< HEAD
 .marge {
     margin: 0 auto;
     background-color: red;
+=======
+.downHobby {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.bold:last-child {
+    margin-top: 20px;
+}
+
+.ctaBlue {
+    color: #fff;
+    border-radius: 8px;
+    padding: 5px 20px;
+    border: none;
+    margin: 0 auto;
+    background-color: #179ED6;
+}
+
+.rating {
+    background: url(../img/rating.svg) no-repeat center;
+    height: 50px;
+}
+
+.cta_inscription {
+    padding: 10px 20px;
+    background-color: #4FB589;
+    border-radius: 8px;
+    color: #fff;
+    margin:  0 auto;
+    display: inline-block;
+}
+
+/* LOGIN CONNEXION */
+
+
+.dropdown-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    width: 350px;
+    margin: auto -150px;
+    font-size: 14px;
+    text-align: center;
+    list-style: none;
+    background-color: #fff;
+    border: none;
+    box-shadow: none;
+}
+
+
+
+
+
+
+
+
+/* PAGE AFFICHAGE ANNONCE UNIQUE */
+
+.content_annonce {
+    margin-top: 70px;
+}
+
+.small_container {
+    height: 10px;
+    margin-top: 20px;
+    display: block;
+}
+
+ .prenom{
+    display: inline-block;
+    float: left;
+}
+
+ .sc_right {
+    display: inline-block;
+    float: right;
+    margin: 0;
+     font-size: 0.9em;
+    color: #1C79A0;
+}
+
+.green {
+    font-weight: 600;
+    color: #4FB589;
+}
+
+.localisation {
+    font-weight: 600;
+    color: #5A5A5A;
+
+>>>>>>> a7cf5d1743e481805fbce2423f3975005e4b891b
 }

@@ -26,4 +26,14 @@ class DefaultController extends Controller
 	{
 		$this->show('default/inscription');
 	}
+    
+    public function commentmarche()
+	{
+		$this->show('default/commentmarche');
+	}
+    
+    public function annonce()
+	{
+		$this->show('default/annonce');
+	}
 }

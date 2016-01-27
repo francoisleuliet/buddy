@@ -22,11 +22,38 @@ function validatePassword(){
  }
 }
  </script>
-       <div class="container-fluid">
-           <div class="intro">
-               <img src="<?= $this->assetUrl('img/logomyBuddy.svg') ?>" alt="logo myBuddy" width="198px" height="202px">
-               <h2>Inscris-toi et deviens un buddy</h2>
+       <div class="container">
+          <div class="content_annonce col-sm-8">
+               <div class="header_annonce row">
+                   <h2>Qui veut jouer de la trompette ?</h2>
+                   <div class="small_container">
+                       <small class="prenom">Par <span class="green">Audrey</span> le 21/01/2016</small>
+                   
+                       <span class="sc_right">Musique > Famille des cuivres</span>
+                   </div>
+                   <hr/>
+               </div>
+               
+               <article>
+                   <p class="annonce_text row">
+                       Avis aux buddies !
+<br/><br/>
+Je cherche quelqu’un avec qui m’entrainer à la trompette que je pratique seule depuis 2 ans.
+Si quelqu’un est dans le coin du Vaudreuil, ce serait cool de s’entraîner à 2 !
+J’ai un niveau intermédiaire, je cherche donc quelqu’un qui aurait plus ou moins
+le même niveau !</p>
+             <div class="row">
+                  <img src="<?= $this->assetUrl('img/img_buddy.jpg') ?>">
+              
+                  <small class="localisation"><img src="<?= $this->assetUrl('img/location_icon.svg') ?>"> Val de Reuil, Eure, Normandie</small>
+               </article>
+               </div>
            </div>
+           
+           
+           
+           
+           
             <div class="signIn col-sm-4 col-sm-offset-4">
 		        <form class="form-horizontal" method="post" enctype="multipart/form-data" id="loginForm" name="loginForm">
 		        	<div class="form-group">

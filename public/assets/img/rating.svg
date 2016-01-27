@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="180px" height="29px" viewBox="0 0 180 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>rating</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="inscription" sketch:type="MSArtboardGroup" transform="translate(-630.000000, -1753.000000)">
+            <g id="rating" sketch:type="MSLayerGroup" transform="translate(630.000000, 1753.000000)">
+                <polygon id="Star-1" fill="#4FB589" sketch:type="MSShapeGroup" points="16 24 6.59543596 28.9442719 8.39154787 18.472136 0.783095739 11.0557281 11.297718 9.52786405 16 0 20.702282 9.52786405 31.2169043 11.0557281 23.6084521 18.472136 25.404564 28.9442719 "></polygon>
+                <polygon id="Star-1-Copy-2" fill="#D2D2D2" sketch:type="MSShapeGroup" points="90 24 80.595436 28.9442719 82.3915479 18.472136 74.7830957 11.0557281 85.297718 9.52786405 90 0 94.702282 9.52786405 105.216904 11.0557281 97.6084521 18.472136 99.404564 28.9442719 "></polygon>
+                <polygon id="Star-1-Copy" fill="#D2D2D2" sketch:type="MSShapeGroup" points="53 24 43.595436 28.9442719 45.3915479 18.472136 37.7830957 11.0557281 48.297718 9.52786405 53 0 57.702282 9.52786405 68.2169043 11.0557281 60.6084521 18.472136 62.404564 28.9442719 "></polygon>
+                <polygon id="Star-1-Copy-3" fill="#D2D2D2" sketch:type="MSShapeGroup" points="127 24 117.595436 28.9442719 119.391548 18.472136 111.783096 11.0557281 122.297718 9.52786405 127 0 131.702282 9.52786405 142.216904 11.0557281 134.608452 18.472136 136.404564 28.9442719 "></polygon>
+                <polygon id="Star-1-Copy-4" fill="#D2D2D2" sketch:type="MSShapeGroup" points="164 24 154.595436 28.9442719 156.391548 18.472136 148.783096 11.0557281 159.297718 9.52786405 164 0 168.702282 9.52786405 179.216904 11.0557281 171.608452 18.472136 173.404564 28.9442719 "></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

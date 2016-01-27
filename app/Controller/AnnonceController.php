@@ -6,7 +6,7 @@ use \Manager\AnnonceManager;
 use Helper\Helper;
 class AnnonceController extends Controller
 {
-    public function annonce()
+    public function post_annonce()
     {
         $builder = new Form\FormBuilder;
         $erreur='';

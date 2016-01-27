@@ -13,8 +13,7 @@ $w_routes = array(
         //['GET|POST', '/inscription', 'Buddy#inscription', 'inscription'],   //register
         ['GET|POST', '/recoverLogin', 'Buddy#recoverLogin', 'recoverLogin'],   // mot de passe oublié;
         //['GET|POST', '/recherche', 'Buddy#recherche', 'recherche'],   //recherche
-
         ['GET|POST', '/inscription', 'Default#inscription', 'inscription'],
-        ['GET|POST', '/profil', 'Default#profil', 'profil'],
+        ['GET|POST', '/profil', 'Profil#profil', 'profil'],
 
         );

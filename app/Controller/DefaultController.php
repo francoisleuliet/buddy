@@ -3,13 +3,18 @@
 namespace Controller;
 
 use \W\Controller\Controller;
+use \W\Manager\UserManager;
+use \W\Security\AuthentificationManager;
+use \Manager\WUsersManager;
+use \Manager\ProfilManager;
+
 
 class DefaultController extends Controller
 {
 
-	public function home()
+	public function index()
 	{
-		$this->show('default/home');
+		$this->show('default/index');
 	}
 
 	public function inscription()
@@ -17,8 +22,8 @@ class DefaultController extends Controller
 		if(isset($_POST['submit'])) {
 
 			// validation des champs
-			$manager = new \Manager\ProfilManager;
-			$manager->setTable('profil');
+			$profil_manager = new \Manager\ProfilManager;
+			$profil_manager->setTable('profil');
 			$email = trim($_POST["inscription"]["email"]);
 			$password = trim($_POST["password"]);
 
@@ -29,6 +34,20 @@ class DefaultController extends Controller
 			if (filter_var($email, FILTER_VALIDATE_EMAIL) && !empty($confirmpassword)) {
 				$_POST["inscription"]["confirmpassword"] = password_hash($confirmpassword, PASSWORD_DEFAULT);
 			}
+            
+            
+            // création du user (wusers)
+            $register = [];
+            // username
+            $register['username'] = $_POST["inscription"]['nom'];
+            // email
+            $register['email'] = $_POST["inscription"]["email"];
+            // password
+            $register['password'] = $_POST["inscription"]["password"];
+            // role
+            $register['role'] = 'user';
+            $userManager = new UserManager();
+            $userManager->insert($register);
 
 			$uploads_dir = 'C:/xampp/htdocs/buddy/upload/profil';
 
@@ -40,8 +59,8 @@ class DefaultController extends Controller
             
             $_POST['inscription']['photo_profil'] = $name;
             
-            $manager->insert($_POST['inscription']);
-				$this->redirectToRoute('home');
+            $profil_manager->insert($_POST['inscription']);
+				$this->redirectToRoute('index');
 			}
 			
 			$this->show('buddy/inscription');

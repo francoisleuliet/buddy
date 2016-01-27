@@ -17,6 +17,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
+       <!-- Fontawesome -->
+       
+        <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"></script>
+       
         <!-- Buddy CSS -->
 
         <link href="<?php echo $this->assetUrl('css/Buddy.css')?>" rel="stylesheet">
@@ -98,13 +102,17 @@
         </header><!-- /.END HEADER -->
         
                 <aside class="bckAside"><?= $this->section('aside_content') ?></aside>
-
+<?= $this->section('profil_content') ?>
 
         <div class="container">
                 
         <main>
+        
+        
+        
         <section>     
             <?= $this->section('main_content') ?>
+            
             <?= $this->section('inscription') ?>
         </section>
 

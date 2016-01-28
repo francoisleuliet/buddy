@@ -19,6 +19,11 @@
 			<?= $this->section('search_content') ?>
 		</section>
 
+         <section>
+			<?= $this->section('results_content') ?>
+		</section>
+
+        
 		<section>
 			<?= $this->section('main_content') ?>
 		</section>

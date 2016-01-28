@@ -1,66 +1,131 @@
 <?php 
 namespace Manager;
+
 class ResultatManager extends \W\Manager\Manager 
 {
-    public function afficheResult($orderBy = "", $orderDir = "ASC"){
+
+    public function afficheResult($categorie, $sous_categorie, $ville, $departement, $region, $orderBy = "", $orderDir = "ASC"){
+          
+        if(!empty($sous_categorie)){
+            $sql_ss_cat = 'AND sous_categorie LIKE :sous_categorie ';   
+        } else {$sql_ss_cat = '';}
+        if(!empty($ville)){
+            $sql_lieu = 'AND ville LIKE :ville';
+            $lieu = "ville";
+            $value = $ville;
+        } elseif(!empty($departement)){
+            $sql_lieu = 'AND departement LIKE :departement';
+            $lieu = "departement";
+            $value = $departement;
+        } elseif(!empty($region)){
+            $sql_lieu = 'AND region LIKE :region';
+            $lieu = "region";
+            $value = $region;  
+        } else{$sql_lieu = '';}
         
-    
-	if (isset($_POST['submit'])) {
-		if (!empty($_GET['sous_categorie'])){
-			$sous_categorie = " AND sous_categorie LIKE " . $_GET['sous_categorie'];
-		} else {
-			$sous_categorie = "";
-		}
-		if (!empty($_GET['region'])){
-			$region = " AND region LIKE '" . $_GET['region'] . "'";
-		} else {
-			$region = "";
-		}
-		if (!empty($_GET['departement'])){
-			$departement = " AND departement LIKE " . $_GET['departement'];
-		} else {
-			$departement = "";
-		}  
         
-        if (!empty($_GET['code_postal'])){
-			$code_postal = " AND code_postal LIKE " . $_GET['code_postal'];
-		} else {
-			$code_postal = "";
-		} 
-        
-        if (!empty($_GET['ville'])){
-			$ville = " AND ville LIKE " . $_GET['ville'];
-		} else {
-			$ville = "";
-		} 
-        
-        $sql = "SELECT * FROM annonce WHERE categorie LIKE :categorie" . $sous_categorie . $region . $departement . $code_postal . $ville;
+
+        $sql = "SELECT a.id, a.categorie, a.sous_categorie, a.titre, a.region, a.departement, a.ville, a.date_pub, a.photo_annonce, a.id_bud, p.prenom FROM annonce AS a LEFT JOIN profil AS p ON a.id_bud = p.id WHERE categorie LIKE :categorie ". $sql_ss_cat . $sql_lieu;
+
         if (!empty($orderBy)){
-			//sécurisation des paramètres, pour éviter les injections SQL
-			if(!preg_match("#^[a-zA-Z0-9_$]+$#", $orderBy)){
-				die("invalid orderBy param");
+
+            //sécurisation des paramètres, pour éviter les injections SQL
+            if(!preg_match("#^[a-zA-Z0-9_$]+$#", $orderBy)){
+                die("invalid orderBy param");
+            }
+            $orderDir = strtoupper($orderDir);
+            if($orderDir != "ASC" && $orderDir != "DESC"){
+                die("invalid orderDir param");
+            }
+
+            $sql .= " ORDER BY $orderBy $orderDir";
+        }
+       
+        $sth = $this->dbh->prepare($sql);
+        $sth->bindValue(":categorie", $categorie);
+        $sth->bindValue(":sous_categorie", $sous_categorie);
+        $sth->bindValue(":".$lieu, $value);
+
+        $sth->execute();
+        return $sth->fetchAll();
+       
+  
 			}
-			$orderDir = strtoupper($orderDir);
-			if($orderDir != "ASC" && $orderDir != "DESC"){
-				die("invalid orderDir param");
+    
+    public function afficheDetail($id, $orderBy = "", $orderDir = "ASC"){
+       
+        $sql = "SELECT * FROM annonce WHERE id LIKE :id";
+
+        if (!empty($orderBy)){
+
+            //sécurisation des paramètres, pour éviter les injections SQL
+            if(!preg_match("#^[a-zA-Z0-9_$]+$#", $orderBy)){
+                die("invalid orderBy param");
+            }
+            $orderDir = strtoupper($orderDir);
+            if($orderDir != "ASC" && $orderDir != "DESC"){
+                die("invalid orderDir param");
+            }
+
+            $sql .= " ORDER BY $orderBy $orderDir";
+        }
+       
+        $sth = $this->dbh->prepare($sql);
+        $sth->bindValue(":id", $id);
+        $sth->execute();
+        return $sth->fetchAll();
+       
 			}
-			$sql .= " ORDER BY $orderBy $orderDir";
-		}
-		$sth = $this->dbh->prepare($sql);
-        $sth->bindValue(':categorie', $params['categorie'], PDO::PARAM_STR);
-		$sth->execute();
-		return $sth->fetchAll();
-        
-        
-      
-        
-        
-        
-     
+    
+    
+    public function detailProfil($id_bud, $orderBy = "", $orderDir = "ASC"){
+          
+        $sql = "SELECT * FROM profil WHERE id LIKE :id";
+
+        if (!empty($orderBy)){
+
+            //sécurisation des paramètres, pour éviter les injections SQL
+            if(!preg_match("#^[a-zA-Z0-9_$]+$#", $orderBy)){
+                die("invalid orderBy param");
+            }
+            $orderDir = strtoupper($orderDir);
+            if($orderDir != "ASC" && $orderDir != "DESC"){
+                die("invalid orderDir param");
+            }
+
+            $sql .= " ORDER BY $orderBy $orderDir";
+        }
+       
+        $sth = $this->dbh->prepare($sql);
+        $sth->bindValue(":id", $id_bud);
+        $sth->execute();
+        return $sth->fetchAll();
+			}
+    
+    public function detailqr($id, $orderBy = "", $orderDir = "ASC"){
+          
+        $sql = "SELECT qp.id_annonce, qp.id, qp.auteur_qp, qp.text_qp, rp.id, rp.auteur_rp, rp.text_rp FROM questions_public AS qp INNER JOIN reponses_public AS rp ON qp.id_annonce = rp.id_annonce WHERE qp.id_annonce LIKE :id_annonce";
+
+        if (!empty($orderBy)){
+
+            //sécurisation des paramètres, pour éviter les injections SQL
+            if(!preg_match("#^[a-zA-Z0-9_$]+$#", $orderBy)){
+                die("invalid orderBy param");
+            }
+            $orderDir = strtoupper($orderDir);
+            if($orderDir != "ASC" && $orderDir != "DESC"){
+                die("invalid orderDir param");
+            }
+
+            $sql .= " ORDER BY $orderBy $orderDir";
+        }
+       
+        $sth = $this->dbh->prepare($sql);
+        $sth->bindValue(":id_annonce", $id);
+        $sth->execute();
+        return $sth->fetchAll();
+			}
+    
+
     }
-    
-    
-    
-    
-    
-}
+

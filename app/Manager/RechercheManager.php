@@ -53,5 +53,5 @@ class RechercheManager extends \W\Manager\Manager
 		return $sth->fetchAll();
 	}
     
-
+    
 }

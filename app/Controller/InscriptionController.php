@@ -29,6 +29,7 @@ class InscriptionController extends Controller
 			if (filter_var($email, FILTER_VALIDATE_EMAIL) && !empty($confirmpassword)) {
 				$_POST["inscription"]["confirmpassword"] = password_hash($confirmpassword, PASSWORD_DEFAULT);
 			}
+  
 
 			$uploads_dir = 'C:/xampp/htdocs/buddy/upload/profil';
 

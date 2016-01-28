@@ -16,11 +16,11 @@ class BuddyController extends Controller
     /**
 	 * Page d'accueil par défaut
 	 */
-    public function index(){
+    public function home(){
         $user = $this->getUser();
         $manager = new UserManager();
         $posts = $manager->findAll();
-        $this->show('buddy/index', ['posts' => $posts, 'user' => $user]);
+        $this->show('Default#home', ['posts' => $posts, 'user' => $user]);
     }
 
     //-------------------------------------------LOGIN--------------------------------------------------
@@ -44,7 +44,7 @@ class BuddyController extends Controller
             if($auth->isValidLoginInfo($_POST['login']['email'], $_POST['login']['password'])) {
                 $user = $userManager->getUserByUsernameOrEmail($_POST['login']['email']);
                 $auth->logUserIn($user);
-                $this->redirectToRoute('succesLogin');
+                $this->redirectToRoute('home');
             }
             else {
                 $this->redirectToRoute('erreur');
@@ -55,7 +55,7 @@ class BuddyController extends Controller
 
     public function succesLogin() {
         
-        $this->show('Buddy/succesLogin');
+        $this->show('default/home');
     }
 
     public function erreur() {
@@ -87,10 +87,8 @@ class BuddyController extends Controller
         }
         $this->show('Buddy/recoverLogin');
     }
-
-
-
-
+    
+    
     //-------------------------------------------INSCRIPTION--------------------------------------------------
 
 
@@ -109,6 +107,8 @@ class BuddyController extends Controller
                 $_POST["inscription"]["password"] = password_hash($password, PASSWORD_DEFAULT);
             }
 
+            
+            
             // création du user (wusers)
             $register = [];
             // username
@@ -122,23 +122,6 @@ class BuddyController extends Controller
             $userManager = new UserManager();
             $userManager->insert($register);
 
-            //--------------------------------------- PHOTO PROFIL ---------------------------------------
-
-            $uploads_dir = 'C:/xampp/htdocs/buddy2/upload/';
-
-            $tmp_name = $_FILES['inscription']['tmp_name']['photo_profil'];
-            $name = $_FILES['inscription']['name']['photo_profil'];
-            $result = move_uploaded_file($tmp_name, "$uploads_dir/$name");
-
-            //debug($result);
-
-            $_POST['inscription']['photo_profil'] = basename($_FILES['inscription']['name']['photo_profil']);
-
-            // debug($_POST['inscription']);
-            // die();
-            $profil_manager->insert($_POST['inscription']);
-
-            $this->redirectToRoute('succesForm');
         }
 
         $this->show('buddy/inscription');
@@ -147,6 +130,8 @@ class BuddyController extends Controller
     public function succesForm() {
         $this->show('Buddy/succesForm');
     }
+
+
 
     ////-------------------------------------------RECHERCHE--------------------------------------------------
     //    

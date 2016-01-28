@@ -38,7 +38,7 @@
                             <li><a href="#" id="connexion">Connexion</a></li>
                         </ul>
                     </nav>
-                    <a class="cta_buddy btn btn-success" href="<?= $this->url('annonce') ?>" role="button">Poster une annonce</a>
+                    <a class="cta_buddy btn btn-success" href="<?= $this->url('post_annonce') ?>" role="button">Poster une annonce</a>
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@
             <a href="#">Comment ça marche ?</a> | <a href="#">Mentions légales</a> | <a href="#">CGU</a> | <a href="#">Contact</a> 
         </div>
     </div>
-    <?= $this->section('javascripts') ?>
+    
 
 
 
@@ -108,6 +108,7 @@
         })
 
     </script>
-  
+  <?= $this->section('javascripts') ?>
 </body>
+
 </html>

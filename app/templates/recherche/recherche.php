@@ -4,6 +4,7 @@
 
 <?= $builder->open()->addClass('form-horizontal')->attribute('role', "form"); ?>
 
+
 <div class="bg_search container-fluid">
     <div class="search col-sm-10 col-md-offset-1">
         <form class="inline">
@@ -46,6 +47,7 @@
         </form>
     </div>
 </div>   
+
 
 <?= $builder->close(); ?>
 

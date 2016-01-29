@@ -40,7 +40,7 @@ class AnnonceController extends Controller
                 $manager->setTable('annonce');
                 debug($_FILES);
 
-                $uploads_dir = 'C:/xampp/htdocs/buddy/upload/annonce';		
+                $uploads_dir = 'C:/xampp/htdocs/buddy/public/assets/upload/annonce';		
                 $tmp_name = $_FILES['photo_annonce']['tmp_name'];
                 if(!empty($_FILES['photo_annonce']['name'])) {
                     $name = time() ."_". $_FILES['photo_annonce']['name'];

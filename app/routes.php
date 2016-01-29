@@ -4,5 +4,6 @@
 		['GET', '/', 'Default#home', 'home'],
         ['GET|POST', '/annonce', 'Annonce#annonce', 'annonce'],
         ['GET|POST', '/recherche', 'Recherche#recherche', 'recherche'],
+        ['GET', '/detail/[:id]', 'Recherche#detail', 'detail'],
         
 	);

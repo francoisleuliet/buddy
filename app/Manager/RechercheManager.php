@@ -33,7 +33,7 @@ class RechercheManager extends \W\Manager\Manager
     public function findSsCat($orderBy = "", $orderDir = "ASC")
 	{
         
-		$sql = "SELECT DISTINCT id_categorie, id, libelle FROM ss_categorie";
+		$sql = "SELECT DISTINCT id_categorie, id, libelle2 FROM ss_categorie";
 		if (!empty($orderBy)){
 
 			//sécurisation des paramètres, pour éviter les injections SQL

@@ -27,7 +27,7 @@
         <?php
 
         foreach( $sslibelles as $sslibelle) {
-            echo '<option value="' . $sslibelle['id'] . '" class="'. $sslibelle['id_categorie'] .'" >' . $sslibelle['libelle'] . '</option>';
+            echo '<option value="' . $sslibelle['id'] . '" class="'. $sslibelle['id_categorie'] .'" >' . $sslibelle['libelle2'] . '</option>';
 
         }        
 
@@ -48,7 +48,7 @@
 <?= $builder->text('postal_code')->id('postal_code')->addClass('form-control hidden')->attribute('name', "code_postal"); ?>
 <?= $builder->submit('Trouver un buddy')->attribute('name', "submit"); ?>
 
-<?= $builder->close(); ?>
+<?= $builder-> close(); ?>
 
 <?php $this->stop('search_content') ?>
 
@@ -56,18 +56,24 @@
 
 <?php if(!empty($resultats)){
     foreach ($resultats as $rows) {
-        echo '************ <br/>';
-        echo $rows['titre'] .'<br/>';
-        echo $rows['description'] .'<br/>';
-        echo $rows['date_pub'] .'<br/>';
-        $adresse_photo = "../../../upload/annonce/" . $rows['photo_annonce'];
-        echo "<img src=$adresse_photo width='250' height='150'>";
-        echo $rows['region'] .'> ';
-        echo $rows['departement'] .'> ';
-        echo $rows['ville'] .'<br/>';    
-    } 
-    
-}?>
+        $adresse_photo = $this->assetUrl('upload/annonce/').$rows['photo_annonce']; ?>        
+        <div class="container">
+                <div class="row">
+                    <div class="liste_annonces listed col-sm-12">
+                        <img src=" <?= $adresse_photo ?>">
+                        <div class="img_right col-sm-10">
+                            
+                            <h3 class="liste_annonces_title"><a href="<?= $this->url('detail',['id'=>$rows['id']]) ?>"> <?= $rows['titre'] ?></a><br/></h3>
+                            <small class="prenom">Par <span class="green"> <?= $rows['prenom'] ?></span> le <?= $rows['date_pub'] ?></small>
+                            <small class="localisation">
+                            <img src="img/location_icon.svg\">
+                                <?= $rows['ville'] . ", " . $rows['departement'] . ", " . $rows['region'] ?>
+                            </small>
+                        </div>
+                </div>    
+            </div>    
+        </div>;
+<?php } } ?>
 
 <?php $this->stop('results_content') ?>
 

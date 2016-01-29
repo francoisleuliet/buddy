@@ -14,7 +14,6 @@ class RechercheController extends Controller
         $builder = new Form\FormBuilder;
         $helper = new Helper;
         $les_libelles = $helper->getLibelles();
-
         if (isset($_GET['submit'])) {
 
             $manager = new \Manager\ResultatManager;
@@ -50,12 +49,16 @@ class RechercheController extends Controller
         }
 
         $this->show('recherche/recherche',["builder" =>$builder, "libelles" =>$les_libelles[0], "sslibelles" =>$les_libelles[1]]);
+  }
 
-
-
-
+    public function detail($id) {
+        $manager = new \Manager\ResultatManager;
+        $detail = $manager->afficheDetail($id);
+        $profil = $manager->detailProfil($detail['id_bud']);
+        $qr = $manager->detailqr($id);
+        $this->show('detail/detail',['detail'=>$detail, 'profil'=>$profil, 'qr'=>$qr]);
+        
     }
-
 
 
 }

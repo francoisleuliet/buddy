@@ -26,7 +26,10 @@
          <section>
 			<?= $this->section('single_content') ?>
 		</section>
-
+   <section>
+			<?= $this->section('profil_content') ?>
+		</section>
+        
         
 		<section>
 			<?= $this->section('main_content') ?>

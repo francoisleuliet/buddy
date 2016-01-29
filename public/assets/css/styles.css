@@ -1,0 +1,293 @@
+@charset "utf-8"; 
+
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    background-color: #F8F8F8;
+}
+
+.header {
+    height: 70px;
+    background-color: #fff;
+}
+
+.header .logo {
+    position: absolute;
+    text-decoration: none;
+    top: 10px;
+    width: 250px;
+    height: 85px;
+}
+.header .textLogo {
+    top: 13px;
+    left: 100px;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #357275;
+    position: absolute;
+}
+.header .textLogo span {
+    font-size: 0.8em;
+}
+
+.header .textLogo span:first-child {
+    margin-left: 10px;
+}
+
+.right {
+    float: right;
+    width: 550px;
+    height: 85px;
+    margin-top: 12px;
+    height: 100%;
+}
+
+.right nav {
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+    float: left;
+}
+
+.right nav ul li{
+    display: inline-block;
+}
+
+.right nav ul li a{
+    color: #525252;
+    margin-right: 20px;
+}
+
+.right .cta_buddy {
+    padding: 10px 20px;
+    background-color: #4FB589;
+    border-radius: 8px;
+    color: #fff;
+    display: inline-block;
+    float: right;
+}
+
+.bg {
+    text-align: center;
+    margin:0;
+    padding:0;
+    height: 80vh;
+    background: url(../../assets/img/bg1.jpg) no-repeat center fixed;
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+}
+
+.bg h1 {
+    margin: 0 25%;
+    margin-top: 30vh;
+    color: #fff;
+    font-size: 3.5em;
+    font-weight: 700;
+}
+
+.bg h1>small {
+    color: #fff;
+    font-size: 0.8em;
+}
+
+.bg_search {
+    background-color: #F0F0F0;
+    padding: 0px 0 0 50px;
+}
+
+
+.search {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+.cta {
+    padding-left: 42px;
+    padding-right: 42px;
+    font-weight: 600;
+    background-color: #4FB589;
+}
+
+
+.annonces {
+    margin-top: 50px;
+}
+
+.footer {
+    text-align: center;
+    color: #fff;
+    background-color: #4FB589;
+    margin-top: 50px;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+}
+
+.footer a {
+    color: #fff;
+}
+
+
+
+
+
+/* PAGE INSCRIPTION */
+
+.intro {
+    margin-top: 70px;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'lato';
+    font-weight: 600;
+    color: #357275;
+    font-size: 2.2em;
+}
+
+.signIn {
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+.signIn input {
+    height: 44px;
+}
+
+.uploadPP {
+    background: url(../img/icon_apn.svg);
+    width: 75px;
+    height: 75px;
+    margin: 0 0 0 20px;
+    padding: 0;
+    z-index: 1;
+    text-align: center;
+}
+
+ 
+.uploadPP input {
+    width: 75px;
+    height: 75px;
+    opacity: 0;
+    z-index: 2;
+}
+
+.uploadText {
+    color: #AFAFAF;
+}
+
+.bold {
+    font-size: 1em;
+    font-weight: 700;
+    color: #5A5A5A;
+    text-align: center;
+}
+
+hr {
+    background-color: #979797;
+    width: 100%;
+    height: 2px;
+    display: block;
+}
+
+<<<<<<< HEAD
+.marge {
+    margin: 0 auto;
+    background-color: red;
+=======
+.downHobby {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.bold:last-child {
+    margin-top: 20px;
+}
+
+.ctaBlue {
+    color: #fff;
+    border-radius: 8px;
+    padding: 5px 20px;
+    border: none;
+    margin: 0 auto;
+    background-color: #179ED6;
+}
+
+.rating {
+    background: url(../img/rating.svg) no-repeat center;
+    height: 50px;
+}
+
+.cta_inscription {
+    padding: 10px 20px;
+    background-color: #4FB589;
+    border-radius: 8px;
+    color: #fff;
+    margin:  0 auto;
+    display: inline-block;
+}
+
+/* LOGIN CONNEXION */
+
+
+.dropdown-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    width: 350px;
+    margin: auto -150px;
+    font-size: 14px;
+    text-align: center;
+    list-style: none;
+    background-color: #fff;
+    border: none;
+    box-shadow: none;
+}
+
+
+
+
+
+
+
+
+/* PAGE AFFICHAGE ANNONCE UNIQUE */
+
+.content_annonce {
+    margin-top: 70px;
+}
+
+.small_container {
+    height: 10px;
+    margin-top: 20px;
+    display: block;
+}
+
+ .prenom{
+    display: inline-block;
+    float: left;
+}
+
+ .sc_right {
+    display: inline-block;
+    float: right;
+    margin: 0;
+     font-size: 0.9em;
+    color: #1C79A0;
+}
+
+.green {
+    font-weight: 600;
+    color: #4FB589;
+}
+
+.localisation {
+    font-weight: 600;
+    color: #5A5A5A;
+
+>>>>>>> a7cf5d1743e481805fbce2423f3975005e4b891b
+}

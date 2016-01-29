@@ -7,10 +7,9 @@ use Manager\RechercheManager;
 
 class Helper
 {
+    public function getLibelles()
+    {
 
-	public function getLibelles()
-	{
-      
         $manager = new RechercheManager;
         $manager->setTable('categorie');
         $resultats = $manager->findCat();              
@@ -21,20 +20,17 @@ class Helper
         }
 
         //debug($libelles);
-        
+
         $manager->setTable('ss_categorie');
         $resultats2=$manager->findSsCat();              
 
         foreach ($resultats2 as $values) {
             $sslibelles[] = $values;
         }
-              
+
         return [$libelles,$sslibelles];
-	
-	}
-    
-    
-    
-    
+
+    }
 
 }
+

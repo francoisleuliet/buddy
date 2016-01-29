@@ -2,15 +2,6 @@
 
 <?php $this->start('single_content') ?>
 
-<?php
-    echo "DETAILS <br/>";
-print_r($detail);
-echo '<br/> PROFIL <br/>';
-print_r($profil);
-print_r($qr);
-
-?>
-
 <div class="container">
     <div class="row">
         <div class="content_annonce col-sm-8">
@@ -97,16 +88,6 @@ print_r($qr);
             </div> 
         </div>    
     </div>
-
-
-
-
-
-
-
-
-
-
 
 
     <?php $this->stop('single_content') ?>

@@ -44,7 +44,12 @@ class RechercheController extends Controller
             } else {
                 $ville = "";
             } 
+            
+          
+            
             $resultats = $manager->afficheResult($categorie, $sous_categorie, $ville, $departement, $region);
+            
+            
             $this->show('recherche/recherche',["builder" =>$builder, "libelles" =>$les_libelles[0], "sslibelles" =>$les_libelles[1], 'resultats' => $resultats]);
         }
 
